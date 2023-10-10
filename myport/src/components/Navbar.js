@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 
 import { ArrowRightIcon } from "@heroicons/react/solid";
 import React from "react";
@@ -25,7 +26,7 @@ const Navbar = () => {
         <a
           href="#contact"
           className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
-          I'm open to job opportunities.
+          I'm open to job opportunities
           <ArrowRightIcon className="w-4 h-4 ml-1" />
         </a>
       </div>
