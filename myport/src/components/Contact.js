@@ -2,7 +2,9 @@
 import {useRef, useState} from "react";
 import axios from 'axios'
 import emailjs from '@emailjs/browser';
-import {emailjsUser} from '../emailjsUser'
+import {emailjsUser} from '../emailjsUser';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Contact = () => {
@@ -12,13 +14,13 @@ const Contact = () => {
    const messageRef = useRef("");
    const [isLoading, setIsLoading] = useState(false)
 
+
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  setIsLoading(true)
+  setIsLoading(true);
 
   try {
-    
     const response = await axios.post('http://localhost:3005/signup', {
       name: nameRef.current.value,
       email: emailRef.current.value,
@@ -26,43 +28,42 @@ const handleSubmit = async (e) => {
     });
 
     if (response.status === 200) {
-      
       const templateParams = {
-        to_email: 'kingsleyibe66@gmail.com', 
+        to_email: 'kingsleyibe66@gmail.com',
         from_name: nameRef.current.value,
         from_email: emailRef.current.value,
         message: messageRef.current.value,
       };
 
-      
       const emailResponse = await emailjs.send(
         'serviceid',
-        "template_kga9xdg",
+        'template_kga9xdg',
         templateParams,
         emailjsUser
       );
 
       if (emailResponse.status === 200) {
-        setIsLoading(false)
-        alert('Your message was sent successfully');
+        setIsLoading(false);
+        toast.success('Your message was sent successfully');
       } else {
-        setIsLoading(false)
-        alert('Failed to send email');
+        setIsLoading(false);
+        toast.error('Failed to send email');
       }
     } else {
-      setIsLoading(false)
-      alert('Failed to send form data to the server');
+      setIsLoading(false);
+      toast.error('Failed to send form data to the server');
     }
   } catch (error) {
-    setIsLoading(false)
+    setIsLoading(false);
     console.error(error);
-    alert('An error occurred while processing your request');
+    toast.error('An error occurred while processing your request');
   }
 };
 
-
   return (
     <section id="contact" className="relative">
+      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
+
       <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
         <div className="lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
           <iframe
