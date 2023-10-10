@@ -2,7 +2,7 @@
 react-portfolio
 
 ## Portfolio-link
-https://6522de265f88894b3c584348--effortless-fairy-f28953.netlify.app/
+https://6524a3b8335edb6758839e94--imaginative-rugelach-91309d.netlify.app/
 
 # Getting Started with Create React App
 

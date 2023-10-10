@@ -14,11 +14,11 @@ const Contact = () => {
    const messageRef = useRef("");
    const [isLoading, setIsLoading] = useState(false)
 
-
-const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
   e.preventDefault();
 
   setIsLoading(true);
+
 
   try {
     const response = await axios.post('http://localhost:3005/signup', {
@@ -44,20 +44,26 @@ const handleSubmit = async (e) => {
 
       if (emailResponse.status === 200) {
         setIsLoading(false);
-        toast.success('Your message was sent successfully');
+       toast.success(response.data.message)
+
+         setTimeout(() => {
+        window.location.reload();
+        }, 10000);
+        
       } else {
         setIsLoading(false);
-        toast.error('Failed to send email');
+        toast.error(response.data.message);
       }
     } else {
       setIsLoading(false);
-      toast.error('Failed to send form data to the server');
+      toast.error(response.data.message);
     }
   } catch (error) {
     setIsLoading(false);
     console.error(error);
-    toast.error('An error occurred while processing your request');
+    toast.error(`An error occured! Try filling the form properly or I have the message already`);
   }
+
 };
 
   return (
