@@ -97,7 +97,7 @@ const Contact = () => {
               <h2 className="title-font font-semibold text-white tracking-widest text-xs">
                 EMAIL
               </h2>
-              <a className="text-indigo-400 leading-relaxed">
+              <a className="text-yellow-600 leading-relaxed">
                 kibe474@gmail.com
               </a>
               <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">
@@ -157,7 +157,7 @@ const Contact = () => {
           </div>
 <button
         type="submit"
-        className={`text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg ${
+        className={`text-white bg-yellow-600 border-0 py-2 px-6 focus:outline-none hover:bg-green-400 rounded text-lg ${
           isLoading ? 'opacity-50 cursor-not-allowed' : ''
         }`}
         disabled={isLoading}
