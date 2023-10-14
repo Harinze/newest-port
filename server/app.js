@@ -5,11 +5,9 @@ import 'dotenv/config';
 import fs from 'fs';
 import {validateEmail} from './helpers.js'
 
-
-
 const app = express();
 
-const port = process.env.PORT || 4000
+const PORT = process.env.PORT
 
 app.use(cors())
 app.use(express.json())
@@ -64,8 +62,8 @@ app.post('/signup', async (req, res) => {
 });
 
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 
