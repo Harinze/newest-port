@@ -12,12 +12,12 @@ export const projects = [
   },
   {
     id: generateID(),
-    title: "Forum Application",
-    subtitle: "Join the Conversation with Our Forum App",
+    title: "Budgetify",
+    subtitle: "Expense Tracking and Budgeting APP",
     description:
-      "A forum application allowing users to post trends, actively engage in discussions, and interact through comments. Utilizing cutting-edge technologies, this app was developed with React.js, Node.js, Express.js, and elegantly styled with CSS",
-    image: "./forumappimage.png",
-    link: "https://github.com/Harinze/forumApp",
+      "Enhance financial management with our sophisticated Expense Tracking and Budget Management App for goal-driven insights. Utilizing cutting-edge technologies, this app was developed with React.js, Express.js, and elegantly styled with CSS",
+    image: "./budgetify.png",
+    link: "https://budgetify-team-favourz.netlify.app/",
   },
   {
     id: generateID(),
@@ -35,7 +35,7 @@ export const projects = [
     description:
       "Ajo Savings, an innovative fintech app, promotes financial inclusion through collective savings for group members' goals. Built with ReactJS, Express.js, Node.js, JavaScript, TypeScript, and PostgreSQL",
     image: "./ajoimage1.png",
-    link: "https://github.com/decadevs/node-sq015-managed-internship-ajo-savings-frontend",
+    link: "https://ajo-savings.decagon.dev/",
   },
 ];
 
